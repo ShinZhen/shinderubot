@@ -8,7 +8,7 @@ bot.on('ready' , function() {
     console.log("Connected");
 });
 
-bot.login(process.env.TOKEN);
+bot.login("NTMwODE5NTI3NjY4MjY5MDY2.DxE8fw.uJbMBjGLIo4HW4sqfaowpnQzGqQ");
 
 
 bot.on('message', message => {
@@ -16,8 +16,21 @@ bot.on('message', message => {
         message.channel.sendMessage('Liste des commandes: \n -*help')
     }
 
-    if (message.content === "Salut"){
-        message.reply("Bien Le bonjour. :)")
-        console.log("Commande Salut effectué");
+    if (message.content === "shinderubot"){
+        message.reply("Createur du bot ShinZhen")
+        console.log("Commande effectué");
     }
+
+    if message.content === prefix + "embed"){
+     var embed = new Discord.RichEmbed()
+        .setTitle("EMBED")
+        .setDescription("Ceci est un embed")
+        .addField(".help","Page d'aide", true)
+        .addField("Embed01","Embed 01 ! :) Suivez L'instagram de Shinzhen (https://www.instagram.com/shinzhen4/?hl=fr", true)
+        .setColor("0x58FA58")
+        .setFooter("Bon Moment Parmis nous ! :)")
+        message.channel.sendEmbed(embed)
+    }
+         
 });
+
